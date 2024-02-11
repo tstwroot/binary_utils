@@ -11,23 +11,23 @@ unsigned char set_bit(unsigned char *byte, unsigned char value, unsigned char of
     return(1);
   }
   
-  unsigned char bit = 1;
+  unsigned char mask = 1;
 
   if(offset != 0)
   { 
     for(unsigned char i = 0; i < offset; i++)
     {
-      bit *= 2;
+      mask *= 2;
     }
   }
   
   if(value == 1)
   {
-    *byte = *byte | bit;
+    *byte = *byte | mask;
   }
   else 
   {
-    *byte = *byte & ~bit;
+    *byte = *byte & ~mask;
   }
 
   return(0);
